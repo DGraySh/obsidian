@@ -10,7 +10,6 @@ spec:
     command:
       - sleep
       - "3600"
-    imagePullPolicy: Always
   imagePullSecrets:
     - name: docker-registry
 EOF
