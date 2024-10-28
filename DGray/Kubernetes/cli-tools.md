@@ -1,3 +1,5 @@
+```yaml
+
 cat <<EOF | k -n payroll-tracing apply -f -
 apiVersion: v1
 kind: Pod
@@ -6,6 +8,10 @@ metadata:
 spec:
   containers:
   - name: cli-tools
+    ports:
+    - name: metrics
+      containerPort: 8888
+      protocol: TCP
     image: artifactory.raiffeisen.ru/ext-devops-community-docker/cli-tools:latest
     command:
       - sleep
@@ -13,3 +19,4 @@ spec:
   imagePullSecrets:
     - name: docker-registry
 EOF
+ ```
