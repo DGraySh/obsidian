@@ -16,13 +16,6 @@ spec:
     command:
       - sleep
       - "3600"
-	resources: 
-	  limits: 
-	    cpu: 10m
-		memory: 200Mi
-	  requests: 
-		cpu: 10m
-		memory: 100Mi
   imagePullSecrets:
     - name: docker-registry
 EOF
