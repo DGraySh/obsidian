@@ -15,10 +15,10 @@ spec:
     image: artifactory.raiffeisen.ru/ext-devops-community-docker/cli-tools:latest
     resources: 
       limits: 
-        cpu: 10m
+        cpu: 100m
         memory: 100Mi
       requests: 
-        cpu: 10m
+        cpu: 100m
         memory: 100Mi
   imagePullSecrets:
     - name: docker-registry
