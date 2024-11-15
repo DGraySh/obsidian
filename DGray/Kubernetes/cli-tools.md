@@ -1,6 +1,6 @@
 ```yaml
 
-cat <<EOF | k -n payroll-tracing apply -f -
+cat <<EOF | k -n cli apply -f -
 apiVersion: v1
 kind: Pod
 metadata:
@@ -16,6 +16,13 @@ spec:
     command:
       - sleep
       - "3600"
+	resources: 
+	  limits: 
+	    cpu: 10m
+		memory: 200Mi
+	  requests: 
+		cpu: 10m
+		memory: 100Mi
   imagePullSecrets:
     - name: docker-registry
 EOF
