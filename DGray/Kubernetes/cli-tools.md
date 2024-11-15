@@ -13,9 +13,13 @@ spec:
       containerPort: 8888
       protocol: TCP
     image: artifactory.raiffeisen.ru/ext-devops-community-docker/cli-tools:latest
-    command:
-      - sleep
-      - "3600"
+    resources: 
+      limits: 
+        cpu: 10m
+        memory: 100Mi
+      requests: 
+        cpu: 10m
+        memory: 100Mi
   imagePullSecrets:
     - name: docker-registry
 EOF
