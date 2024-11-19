@@ -9,6 +9,9 @@ spec:
   containers:
   - name: cli-tools
     image: artifactory.raiffeisen.ru/ext-devops-community-docker/cli-tools:latest
+    command:
+      - sleep
+      - "3600"
     resources: 
       limits: 
         cpu: 100m
