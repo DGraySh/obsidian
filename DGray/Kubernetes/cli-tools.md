@@ -1,6 +1,6 @@
 ```yaml
 
-cat <<EOF | k -n cli apply -f -
+cat <<EOF | k -n gtlab-agent apply -f -
 apiVersion: v1
 kind: Pod
 metadata:
