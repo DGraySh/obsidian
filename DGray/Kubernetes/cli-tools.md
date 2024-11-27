@@ -1,6 +1,6 @@
 ```yaml
 
-cat <<EOF | k -n gitlab-agent apply -f -
+cat <<EOF | k -n payroll-tracing apply -f -
 apiVersion: v1
 kind: Pod
 metadata:
