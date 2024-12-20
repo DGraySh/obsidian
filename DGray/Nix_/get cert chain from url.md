@@ -1,0 +1,1 @@
+openssl s_client -showcerts -connect URL:port
