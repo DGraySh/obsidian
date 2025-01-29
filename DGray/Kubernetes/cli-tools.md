@@ -28,9 +28,9 @@ spec:
         driver: csi.cert-manager.io
         readOnly: true
         volumeAttributes:
-          csi.cert-manager.io/issuer-name: ca-issuer
-          csi.cert-manager.io/issuer-kind: Issuer
-          csi.cert-manager.io/dns-names:cli-tools
+          csi.cert-manager.io/issuer-name: vaultpki-clusterissuer
+          csi.cert-manager.io/issuer-kind: ClusterIssuer
+          csi.cert-manager.io/dns-names: cli-tools
   imagePullSecrets:
     - name: docker-registry
 EOF
