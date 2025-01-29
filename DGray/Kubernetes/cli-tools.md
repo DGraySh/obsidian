@@ -1,6 +1,6 @@
 ```yaml
 
-cat <<EOF | k -n payroll-tracing apply -f -
+cat <<EOF | k -n sandbox apply -f -
 apiVersion: v1
 kind: Pod
 metadata:
@@ -19,6 +19,15 @@ spec:
       requests: 
         cpu: 100m
         memory: 100Mi
+  volumes:
+    - name: tls
+      csi:
+        driver: csi.cert-manager.io
+        readOnly: true
+        volumeAttributes:
+          csi.cert-manager.io/issuer-name: ca-issuer
+          csi.cert-manager.io/issuer-kind: Issuer
+          csi.cert-manager.io/dns-names:cli-tools
   imagePullSecrets:
     - name: docker-registry
 EOF
