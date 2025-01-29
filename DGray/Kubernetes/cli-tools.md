@@ -1,6 +1,6 @@
 ```yaml
 
-cat <<EOF | k -n sandbox apply -f -
+cat <<EOF | k -n monitoring-team-managed apply -f -
 apiVersion: v1
 kind: Pod
 metadata:
@@ -15,6 +15,8 @@ spec:
     volumeMounts:
       - mountPath: "/tls"
         name: tls
+      - name: ca  
+        mountPath: /etc/ssl/certs
     resources: 
       limits: 
         cpu: 100m
@@ -22,11 +24,10 @@ spec:
       requests: 
         cpu: 100m
         memory: 100Mi
-    securityContext:
-      runAsNonRoot: false
-      runAsUser: 0
-      runAsGroup: 0
   volumes:
+    - name: ca  
+      secret:  
+        secretName: bank-ca
     - name: tls
       csi:
         driver: csi.cert-manager.io
@@ -40,3 +41,4 @@ spec:
     - name: docker-registry
 EOF
  ```
+grpcurl thanos-storegateway.monitoring-team-managed.svc.prollact-v-dmz5v-msk34-c05.kaas.raiffeisen.ru:10901 list
