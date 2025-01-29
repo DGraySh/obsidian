@@ -12,6 +12,9 @@ spec:
     command:
       - sleep
       - "3600"
+    volumeMounts:
+      - mountPath: "/tls"
+        name: tls
     resources: 
       limits: 
         cpu: 100m
