@@ -35,7 +35,7 @@ spec:
           csi.cert-manager.io/issuer-name: vaultpki-clusterissuer
           csi.cert-manager.io/issuer-kind: ClusterIssuer
           csi.cert-manager.io/dns-names: cli-tools
-          csi.cert-manager.io/fs-group: 2001
+          csi.cert-manager.io/fs-group: "2001"
   imagePullSecrets:
     - name: docker-registry
 EOF
