@@ -22,7 +22,10 @@ spec:
       requests: 
         cpu: 100m
         memory: 100Mi
-    
+    securityContext:
+      runAsNonRoot: false
+      runAsUser: 0
+      runAsGroup: 0
   volumes:
     - name: tls
       csi:
