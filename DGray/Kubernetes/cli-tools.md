@@ -69,3 +69,16 @@ spec:
 EOF
  ```
 grpcurl thanos-storegateway.monitoring-team-managed.svc.prollact-v-dmz5v-msk34-c05.kaas.raiffeisen.ru:10901 list
+
+```
+cat <<EOF | k -n tracing apply -f -
+apiVersion: v1
+data:
+  ca.pem: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZJVENDQXdtZ0F3SUJBZ0lRRnArbVpkSzhZbzlIRUF2c2NnSWdtREFOQmdrcWhraUc5dzBCQVFzRkFEQWoKTVNFd0h3WURWUVFERXhoQlR5QlNZV2xtWm1WcGMyVnVZbUZ1YXlCU2IyOTBRMEV3SGhjTk1UWXhNakl5TURneApOelV6V2hjTk16WXhNakl5$
+kind: Secret
+metadata:
+  name: bank-ca
+  namespace: tracing
+type: Opaque
+EOF
+```
