@@ -1,7 +1,7 @@
 
 ```yaml
 
-cat <<EOF | k -n tracing apply -f -
+cat <<EOF | k -n payroll-tracing apply -f -
 apiVersion: v1
 kind: Pod
 metadata:
